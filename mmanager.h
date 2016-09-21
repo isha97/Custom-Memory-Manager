@@ -1,3 +1,4 @@
+// Header file 
 #ifndef _MMANAGER_H_INCLUDED_
 #define _MMANAGER_H_INCLUDED_
 #define POOLSIZE 32
@@ -29,7 +30,7 @@ class MemoryManager: public IMemoryManager
 };
 inline void* MemoryManager::allocate(size_t size)
 {
-  if (0 == freeStoreHead)
+  if (0 == freeStoreHead) // No free space available
     expandPoolSize ();
 
   FreeStore* head = freeStoreHead;
@@ -49,7 +50,7 @@ void MemoryManager::cleanUp()
     FreeStore* nextPtr = freeStoreHead;
     for (; nextPtr; nextPtr = freeStoreHead) {
       freeStoreHead = freeStoreHead->next;
-      delete [] nextPtr; // remember this was a char array
+      delete [] nextPtr;
       }
 }
 #endif
