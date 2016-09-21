@@ -1,4 +1,4 @@
-// It uses malloc and free defined in stdio.h
+// It uses new and delete functions defined in stdio.h
 #include <time.h>
 #include<stdio.h>
 class PageTable
