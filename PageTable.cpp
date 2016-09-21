@@ -1,3 +1,4 @@
+// It uses malloc and free defined in stdio.h
 #include <time.h>
 #include<stdio.h>
 class PageTable
